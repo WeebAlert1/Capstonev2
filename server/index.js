@@ -10,9 +10,12 @@ const {SERVER_PORT} = process.env
 const {
     getShows,
     deleteShow, 
-    createShow, 
+    createShow,
+    seed, 
     
 } = require('./controller')
+
+app.post('/seed', seed)
 
 app.get(`/api/shows`, getShows)
 app.delete(`/api/shows/:id`, deleteShow)
