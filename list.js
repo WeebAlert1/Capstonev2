@@ -25,10 +25,10 @@ function getAllShows() {
         .catch(err => console.log(err))
 }
 
-/* function deleteCard(id) {
+function deleteCard(id) {
     axios.delete(`http://localhost:4004/api/shows/${id}`)
     .then(() => getAllShows())
     .catch(err => console.log(err))
-} */
+} 
 
 getAllShows()
