@@ -14,7 +14,7 @@ function createShowCard(show) {
 }
 
 function getAllShows() {
-    axios.get('http://localhost:4004/shows')
+    axios.get('http://localhost:4004/api/shows')
         .then(res => {
             res.data.forEach(show => {
                 const showCard = createShowCard(show)
@@ -25,10 +25,10 @@ function getAllShows() {
         .catch(err => console.log(err))
 }
 
-function deleteCard(id) {
-    axios.delete(`http://localhost:4004/shows/${id}`)
+/* function deleteCard(id) {
+    axios.delete(`http://localhost:4004/api/shows/${id}`)
     .then(() => getAllShows())
     .catch(err => console.log(err))
-}
+} */
 
 getAllShows()

@@ -24,17 +24,14 @@ function submitHandler(e) {
 
     //createShowCard(bodyObj)
 
-    showName.value = ''
-    imageURL.value = ''
 
     axios.post(`http://localhost:4004/api/shows`, bodyObj)
         .then(() => {
-            showName.value = ''
-            imageURL.value = ''
+          
             getAllShows()
         })
 }
-function createShowCard(show) {
+/* function createShowCard(show) {
    
 
     const showCard =  `<div class="show-card"><img alt='show cover image' src=${show.imageURL} class="show-cover-image"/>
@@ -46,26 +43,29 @@ function createShowCard(show) {
 
     return showCard
 }
+ */
+/* function getAllShows() {
 
-function getAllShows() {
+    //showsContainer.innerHTML = ''
+    
     axios.get('http://localhost:4004/api/shows')
         .then(res => {
             res.data.forEach(show => {
-                const showCard = createShowCard(show)
+                let showCard = createShowCard(show)
 
                 showsContainer.innerHTML += showCard
             })
         })
         .catch(err => console.log(err))
-}
+} */
 
-function deleteCard(id) {
+/* function deleteCard(id) {
     axios.delete(`http://localhost:4004/api/shows/${id}`)
     .then(() => getAllShows())
     .catch(err => console.log(err))
-}
+} */
 
-getAllShows()
+//getAllShows()
 /* function createShowCard(show) {
     /* const showCard = document.createElement('div')
     showCard.classList.add('show-card')
@@ -108,13 +108,12 @@ getAllShows()
     axios.get('http://localhost:4004/shows')
 } */
 
-function displayShows(arr) {
+/* function displayShows(arr) {
     showsContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
         createShowCard(arr[i])
     }
-} 
+}  */
 
 form.addEventListener('submit', submitHandler)
 
-//getAllShows()
